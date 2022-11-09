@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .modal {
+        @apply fixed -top-5 inset-0 bg-transparent flex justify-center items-center opacity-0 invisible transition-all duration-300
+    }
+    .modal-open {
+        @apply top-0 opacity-100 visible
+    }
+}
+
+[aria-label='cart-product-wrapper'], [aria-label='total-amount'], [aria-label='button-add-discounts']{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+[aria-label="loading"] {
+    height: 23px;
+    width: 23px;
+    margin: 0 auto;
+    border: 3px solid gray;
+    border-top: 3px solid black;
+    border-radius: 50px;
+    animation: spin .8s linear infinite;
+}
+
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
